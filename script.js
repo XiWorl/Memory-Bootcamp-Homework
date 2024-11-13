@@ -25,6 +25,8 @@ function initGame() {
     // Write your code here
 
     document.getElementById('restart-btn').addEventListener('click', initGame);
+    shuffleArray(cards)
+    createCard("")
 }
 
 /*
@@ -34,6 +36,13 @@ function initGame() {
 */
 function createCard(symbol) {
     // Write your code here
+    let card = document.createElement("div")
+    card.classList.add("card")
+    card.dataset.add(symbol)
+    
+    card.addEventListener('click', flipCard)
+    
+    document.getElementById("game-board").appendChild(card)
 }
 
 /*
